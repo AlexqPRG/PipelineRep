@@ -1,5 +1,9 @@
 package com.web_project.zayavki.controllers;
 
+/**
+ * Controller for registration
+ */
+
 import com.web_project.zayavki.models.ClientModel;
 import com.web_project.zayavki.models.RoleEnum;
 import com.web_project.zayavki.models.UserModel;
@@ -25,11 +29,21 @@ public class RegistrationController {
     @Autowired
     private ApiService apiService;
 
+    /**
+     * Endpoint for view registration form
+     * @return name of html page
+     */
     @GetMapping("/registration")
     public String registrationView(){
         return "registration";
     }
 
+    /**
+     * Edpoint for registration
+     * @param user object of class UserModel
+     * @param model object of class Model
+     * @return rediret to login page
+     */
     @PostMapping("/registration")
     public String registrationUser(UserModel user, Model model){
         if(userRepository.existsByUsername(user.getUsername())){
