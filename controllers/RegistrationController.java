@@ -1,9 +1,3 @@
-package com.web_project.zayavki.controllers;
-
-/**
- * Controller for registration
- */
-
 import com.web_project.zayavki.models.ClientModel;
 import com.web_project.zayavki.models.RoleEnum;
 import com.web_project.zayavki.models.UserModel;
@@ -20,29 +14,34 @@ import java.util.Collections;
 
 @Controller
 public class RegistrationController {
+    /**
+     * UserRepository for create new user
+     */
     @Autowired
     private UserRepository userRepository;
-
+    /**
+     * PassowrdEncoder for hash password
+     */
     @Autowired
     private PasswordEncoder passwordEncoder;
-
+    /**
+     * ApiService for work with api methods
+     */
     @Autowired
     private ApiService apiService;
-
     /**
-     * Endpoint for view registration form
-     * @return name of html page
+     * Method for view reg form
+     * @return html page
      */
     @GetMapping("/registration")
     public String registrationView(){
         return "registration";
     }
-
     /**
-     * Edpoint for registration
-     * @param user object of class UserModel
+     * Method for register user
+     * @param user object of Class UserModel
      * @param model object of class Model
-     * @return rediret to login page
+     * @return html login page
      */
     @PostMapping("/registration")
     public String registrationUser(UserModel user, Model model){
