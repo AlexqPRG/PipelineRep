@@ -15,22 +15,22 @@ import java.util.Collections;
 @Controller
 public class RegistrationController {
     /**
-     * UserRepository for create new user
+     * UserRepository for create new user.
      */
     @Autowired
     private UserRepository userRepository;
     /**
-     * PassowrdEncoder for hash password
+     * PassowrdEncoder for hash password.
      */
     @Autowired
     private PasswordEncoder passwordEncoder;
     /**
-     * ApiService for work with api methods
+     * ApiService for work with api methods.
      */
     @Autowired
     private ApiService apiService;
     /**
-     * Method for view reg form
+     * Method for view reg form.
      * @return html page
      */
     @GetMapping("/registration")
@@ -38,7 +38,7 @@ public class RegistrationController {
         return "registration";
     }
     /**
-     * Method for register user
+     * Method for register user.
      * @param user object of Class UserModel
      * @param model object of class Model
      * @return html login page
