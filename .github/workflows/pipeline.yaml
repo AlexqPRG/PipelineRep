@@ -8,3 +8,14 @@ on:
     branches:
       - vetochka
 
+jobs:
+  checkstyle_project:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Super-linter
+        uses: super-linter/super-linter@v7.2.1
