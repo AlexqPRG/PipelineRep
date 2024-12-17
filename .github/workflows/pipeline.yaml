@@ -1,0 +1,10 @@
+name: Java Code Style Check With Super Linter
+
+on:
+  push:
+    branches:
+      - vetochka
+  pull_request:
+    branches:
+      - vetochka
+
